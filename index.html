@@ -22,36 +22,37 @@
       --color-primary-highlight: #cedcd8;
       --color-blue: #1e5fa0;
       --color-blue-hover: #164a82;
-      --color-blue-light: #e5eef8;
-      --shadow-sm: 0 1px 2px oklch(0.2 0.01 80 / 0.06);
-      --shadow-md: 0 4px 12px oklch(0.2 0.01 80 / 0.08);
+      --color-blue-light: #deeaf7;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
       --radius-lg: 0.75rem;
       --radius-xl: 1rem;
       --radius-full: 9999px;
       --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
-      --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem;
-      --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem;
-      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
-      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
-      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
-      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --space-4: 1rem;    --space-5: 1.25rem; --space-6: 1.5rem;
+      --space-8: 2rem;    --space-10: 2.5rem; --space-12: 3rem;
+      --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+      --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
       --font-display: "Instrument Serif", Georgia, serif;
-      --font-body: "Work Sans", "Helvetica Neue", sans-serif;
-      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      --font-body:    "Work Sans", "Helvetica Neue", sans-serif;
+      --transition: 180ms cubic-bezier(0.16,1,0.3,1);
     }
     [data-theme="dark"] {
-      --color-bg: #171614; --color-surface: #1c1b19;
-      --color-border: #393836; --color-divider: #262523;
+      --color-bg: #171614;         --color-surface: #1c1b19;
+      --color-border: #393836;     --color-divider: #262523;
       --color-surface-offset: #1d1c1a;
-      --color-text: #cdccca; --color-text-muted: #797876; --color-text-faint: #5a5957;
-      --color-primary: #4f98a3; --color-primary-hover: #227f8b;
+      --color-text: #cdccca;       --color-text-muted: #797876;
+      --color-text-faint: #5a5957;
+      --color-primary: #4f98a3;    --color-primary-hover: #227f8b;
       --color-primary-highlight: #313b3b;
-      --color-blue: #5090cc; --color-blue-hover: #3a78b8;
-      --color-blue-light: rgba(80,144,204,.13);
-      --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.2);
-      --shadow-md: 0 4px 12px oklch(0 0 0 / 0.3);
+      --color-blue: #5090cc;       --color-blue-hover: #3a78b8;
+      --color-blue-light: rgba(80,144,204,.15);
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.25);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.35);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -62,21 +63,21 @@
       color: var(--color-text); background: var(--color-bg);
       transition: background var(--transition), color var(--transition);
     }
-    h1, h2, h3 { text-wrap: balance; line-height: 1.15; font-family: var(--font-display); }
+    h1,h2,h3 { text-wrap: balance; line-height: 1.15; font-family: var(--font-display); }
     button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
-    a { color: inherit; text-decoration: none; }
+    a      { color: inherit; text-decoration: none; }
 
-    /* HEADER */
+    /* ── HEADER ── */
     header {
       background: var(--color-surface); border-bottom: 1px solid var(--color-border);
-      padding: var(--space-4) var(--space-6); display: flex; align-items: center;
-      justify-content: space-between; position: sticky; top: 0; z-index: 200;
-      box-shadow: var(--shadow-sm);
+      padding: var(--space-4) var(--space-6);
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200; box-shadow: var(--shadow-sm);
     }
     .logo { display: flex; align-items: center; gap: var(--space-3); }
     .logo svg { color: var(--color-primary); }
     .logo-text { font-family: var(--font-display); font-size: var(--text-lg); }
-    .logo-sub { font-size: var(--text-xs); color: var(--color-text-muted); }
+    .logo-sub  { font-size: var(--text-xs); color: var(--color-text-muted); }
     .toggle {
       width: 40px; height: 40px; display: flex; align-items: center;
       justify-content: center; border-radius: var(--radius-full);
@@ -84,11 +85,12 @@
     }
     .toggle:hover { background: var(--color-surface-offset); color: var(--color-text); }
 
-    /* TABS */
+    /* ── TAB BAR ── */
     .tab-bar {
       position: sticky; top: 65px; z-index: 100;
       background: var(--color-surface); border-bottom: 1px solid var(--color-border);
-      display: flex; justify-content: center; overflow-x: auto; scrollbar-width: none;
+      display: flex; justify-content: center;
+      overflow-x: auto; scrollbar-width: none;
     }
     .tab-bar::-webkit-scrollbar { display: none; }
     .tab-btn {
@@ -101,13 +103,14 @@
       content: ''; position: absolute; bottom: 0; left: 12px; right: 12px;
       height: 2.5px; border-radius: 2px 2px 0 0;
       background: var(--tab-accent, var(--color-primary));
-      transform: scaleX(0); transition: transform 280ms cubic-bezier(0.16,1,0.3,1);
+      transform: scaleX(0);
+      transition: transform 280ms cubic-bezier(0.16,1,0.3,1);
     }
-    .tab-btn:hover { color: var(--color-text); }
+    .tab-btn:hover  { color: var(--color-text); }
     .tab-btn.active { color: var(--color-text); }
     .tab-btn.active::after { transform: scaleX(1); }
 
-    /* TAB SECTIONS */
+    /* ── TAB SECTIONS ── */
     .tab-section { display: none; }
     .tab-section.active {
       display: block;
@@ -118,26 +121,23 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* HERO */
+    /* ── HERO ── */
     .hero {
-      padding: var(--space-12) var(--space-6) var(--space-8); text-align: center;
+      padding: var(--space-12) var(--space-6) var(--space-8);
+      text-align: center;
     }
-    .hero-wien {
-      background: linear-gradient(135deg, var(--color-primary-highlight), var(--color-bg) 60%);
-    }
-    .hero-munich {
-      background: linear-gradient(135deg, var(--color-blue-light), var(--color-bg) 60%);
-    }
+    .hero-wien    { background: linear-gradient(135deg, var(--color-primary-highlight), var(--color-bg) 60%); }
+    .hero-munich  { background: linear-gradient(135deg, var(--color-blue-light),         var(--color-bg) 60%); }
     .hero-pill {
       display: inline-flex; align-items: center; gap: var(--space-2);
       color: #fff; padding: var(--space-1) var(--space-4);
       border-radius: var(--radius-full); font-size: var(--text-sm);
       font-weight: 600; margin-bottom: var(--space-4);
     }
-    .hero-pill-wien { background: var(--color-primary); }
-    .hero-pill-munich { background: var(--color-blue); }
+    .pill-wien   { background: var(--color-primary); }
+    .pill-munich { background: var(--color-blue); }
     .hero h1 { font-size: var(--text-2xl); margin-bottom: var(--space-2); }
-    .hero p { color: var(--color-text-muted); max-width: 100%; }
+    .hero p  { color: var(--color-text-muted); }
     .hotel {
       display: inline-flex; align-items: center; gap: var(--space-2);
       margin-top: var(--space-4); background: var(--color-surface);
@@ -147,7 +147,7 @@
     }
     .hotel strong { color: var(--color-text); }
 
-    /* STATS */
+    /* ── STATS ── */
     .stats {
       background: var(--color-surface); border-bottom: 1px solid var(--color-border);
       padding: var(--space-4) var(--space-6);
@@ -155,18 +155,19 @@
     }
     .stat { text-align: center; }
     .stat-val {
-      font-size: var(--text-xl); font-family: var(--font-display);
-      font-weight: 700;
+      font-size: var(--text-xl); font-family: var(--font-display); font-weight: 700;
     }
-    .stat-val-wien { color: var(--color-primary); }
-    .stat-val-munich { color: var(--color-blue); }
+    .sv-wien   { color: var(--color-primary); }
+    .sv-munich { color: var(--color-blue); }
     .stat-lbl {
       font-size: var(--text-xs); color: var(--color-text-muted);
       text-transform: uppercase; letter-spacing: .05em;
     }
 
-    /* MAIN CONTENT */
-    main { max-width: 960px; margin: 0 auto; padding: var(--space-8) var(--space-4); }
+    /* ── CONTENT WRAPPER ── */
+    .main-content { max-width: 960px; margin: 0 auto; padding: var(--space-8) var(--space-4); }
+
+    /* ── DAY ── */
     .day { margin-bottom: var(--space-10); }
     .day-hd { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-5); }
     .day-num {
@@ -174,47 +175,50 @@
       display: flex; align-items: center; justify-content: center;
       flex-direction: column; flex-shrink: 0;
     }
-    .day-num-wien { background: var(--color-primary); }
-    .day-num-munich { background: var(--color-blue); }
+    .dn-wien   { background: var(--color-primary); }
+    .dn-munich { background: var(--color-blue); }
     .day-num .n { font-size: var(--text-lg); font-weight: 700; line-height: 1; }
     .day-num .l { font-size: .6rem; text-transform: uppercase; letter-spacing: .05em; opacity: .85; }
-    .day-title { font-family: var(--font-display); font-size: var(--text-xl); }
-    .day-sub { font-size: var(--text-sm); color: var(--color-text-muted); }
+    .day-title  { font-family: var(--font-display); font-size: var(--text-xl); }
+    .day-sub    { font-size: var(--text-sm); color: var(--color-text-muted); }
 
+    /* ── CARDS ── */
     .cards { display: grid; gap: var(--space-4); }
     .card {
       background: var(--color-surface);
-      border: 1px solid oklch(from var(--color-text) l c h / 0.08);
-      border-radius: var(--radius-xl); padding: var(--space-5) var(--space-6);
-      box-shadow: var(--shadow-sm); display: grid;
-      grid-template-columns: 1fr auto; gap: var(--space-2) var(--space-4);
-      align-items: start; cursor: pointer;
+      border: 1px solid rgba(40,37,29,0.08);
+      border-radius: var(--radius-xl);
+      padding: var(--space-5) var(--space-6);
+      box-shadow: var(--shadow-sm);
+      display: grid; grid-template-columns: 1fr auto;
+      gap: var(--space-2) var(--space-4); align-items: start;
+      cursor: pointer;
       transition: box-shadow var(--transition), transform var(--transition);
     }
+    [data-theme="dark"] .card { border-color: rgba(255,240,220,0.08); }
     .card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-    .em { font-size: 1.5rem; margin-bottom: var(--space-1); }
+    .em    { font-size: 1.5rem; margin-bottom: var(--space-1); }
     .cname { font-family: var(--font-display); font-size: var(--text-lg); margin-bottom: var(--space-1); }
     .ctrans { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-xs); color: var(--color-text-muted); }
     .cprice { text-align: right; }
-    .cprice .val {
-      font-size: var(--text-lg); font-weight: 700; font-family: var(--font-display);
-    }
-    .cprice-wien .val { color: var(--color-primary); }
-    .cprice-munich .val { color: var(--color-blue); }
+    .cprice .val { font-size: var(--text-lg); font-weight: 700; font-family: var(--font-display); }
+    .cv-wien   { color: var(--color-primary); }
+    .cv-munich { color: var(--color-blue); }
     .cprice .lbl { font-size: var(--text-xs); color: var(--color-text-muted); }
 
     hr { border: none; border-top: 1px solid var(--color-divider); margin: var(--space-8) 0; }
 
+    /* ── MAP BUTTON ── */
     .mapbtn {
       display: inline-flex; align-items: center; gap: var(--space-2);
       color: #fff; padding: var(--space-3) var(--space-6);
       border-radius: var(--radius-full); font-size: var(--text-sm);
       font-weight: 600; transition: background var(--transition);
     }
-    .mapbtn-wien { background: var(--color-primary); }
-    .mapbtn-wien:hover { background: var(--color-primary-hover); }
-    .mapbtn-munich { background: var(--color-blue); }
-    .mapbtn-munich:hover { background: var(--color-blue-hover); }
+    .mb-wien   { background: var(--color-primary); }
+    .mb-wien:hover   { background: var(--color-primary-hover); }
+    .mb-munich { background: var(--color-blue); }
+    .mb-munich:hover { background: var(--color-blue-hover); }
 
     footer {
       text-align: center; padding: var(--space-8);
@@ -231,235 +235,296 @@
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
-        <path d="M10 20L16 8L22 20" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-        <path d="M12 16h8" stroke="currentColor" stroke-width="2"/>
-      </svg>
-      <div>
-        <div class="logo-text">Urlaub 2026</div>
-        <div class="logo-sub">München &amp; Wien · Finn &amp; Papa</div>
-      </div>
+<header>
+  <div class="logo">
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
+      <path d="M10 20L16 8L22 20" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M12 16h8" stroke="currentColor" stroke-width="2"/>
+    </svg>
+    <div>
+      <div class="logo-text">Urlaub 2026</div>
+      <div class="logo-sub">München &amp; Wien · Finn &amp; Papa</div>
     </div>
-    <button class="toggle" data-theme-toggle aria-label="Dark Mode umschalten">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-      </svg>
-    </button>
-  </header>
+  </div>
+  <button class="toggle" data-theme-toggle aria-label="Dark Mode umschalten">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+  </button>
+</header>
 
-  <nav class="tab-bar">
-    <button class="tab-btn active" style="--tab-accent:var(--color-blue)" onclick="showTab('munich', this)">
-      🍺 München
-    </button>
-    <button class="tab-btn" style="--tab-accent:var(--color-primary)" onclick="showTab('wien', this)">
-      🎼 Wien
-    </button>
-  </nav>
+<nav class="tab-bar">
+  <button class="tab-btn active" style="--tab-accent:var(--color-blue)" onclick="showTab('munich',this)">
+    🍺 München
+  </button>
+  <button class="tab-btn" style="--tab-accent:var(--color-primary)" onclick="showTab('wien',this)">
+    🎼 Wien
+  </button>
+</nav>
 
-  <!-- ══════════════ MÜNCHEN ══════════════ -->
-  <div id="tab-munich" class="tab-section active">
-    <section class="hero hero-munich">
-      <div class="hero-pill hero-pill-munich">🍺 Stopover · Tag 1</div>
-      <h1>München entdecken</h1>
-      <p>BMW Museum &amp; Übernachtung · 2 Personen</p>
-      <div class="hotel">🏨 <strong>Leonardo Royal Hotel München</strong> · Ungererstraße 139</div>
-    </section>
 
-    <div class="stats">
-      <div class="stat"><div class="stat-val stat-val-munich">05:00</div><div class="stat-lbl">Abfahrt Kaarst</div></div>
-      <div class="stat"><div class="stat-val stat-val-munich">~600 km</div><div class="stat-lbl">Fahrtstrecke</div></div>
-      <div class="stat"><div class="stat-val stat-val-munich">~5–6 h</div><div class="stat-lbl">Fahrzeit</div></div>
-      <div class="stat"><div class="stat-val stat-val-munich">~30 €</div><div class="stat-lbl">BMW Museum (2 P.)</div></div>
-    </div>
+<!-- ════════════════════════════════════
+     MÜNCHEN
+════════════════════════════════════ -->
+<div id="tab-munich" class="tab-section active">
 
-    <main>
-      <div class="day">
-        <div class="day-hd">
-          <div class="day-num day-num-munich"><span class="n">1</span><span class="l">Tag</span></div>
-          <div>
-            <div class="day-title">Anreisetag</div>
-            <div class="day-sub">Abfahrt 05:00 Uhr · A3 / A9 Richtung München</div>
-          </div>
-        </div>
-        <div class="cards">
-          <div class="card" onclick="window.open('https://www.google.com/maps?q=Am+Olympiapark+2,+80809+M%C3%BCnchen','_blank')">
-            <div>
-              <div class="em">🏎️</div>
-              <div class="cname">BMW Museum</div>
-              <div class="ctrans">🚇 U3 Olympiazentrum · Am Olympiapark 2</div>
-              <div class="ctrans" style="margin-top:4px">🕐 Di–So · 10:00–18:00 Uhr</div>
-            </div>
-            <div class="cprice cprice-munich">
-              <div class="val">~30,00 €</div>
-              <div class="lbl">2 Personen</div>
-            </div>
-          </div>
-          <div class="card" onclick="window.open('https://www.google.com/maps?q=Ungererstra%C3%9Fe+139,+80805+M%C3%BCnchen','_blank')">
-            <div>
-              <div class="em">🏨</div>
-              <div class="cname">Leonardo Royal Hotel München</div>
-              <div class="ctrans">Ungererstraße 139, 80805 München</div>
-              <div class="ctrans" style="margin-top:4px">🌙 Übernachtung · Weiterfahrt am nächsten Morgen</div>
-            </div>
-            <div class="cprice cprice-munich">
-              <div class="val">Hotel</div>
-              <div class="lbl">Übernachtung</div>
-            </div>
-          </div>
-          <div class="card" onclick="window.open('https://www.google.com/maps/dir/Leonardo+Royal+Hotel+M%C3%BCnchen/Viehmarktgasse+4,+1030+Wien','_blank')">
-            <div>
-              <div class="em">🚗</div>
-              <div class="cname">Weiterfahrt nach Wien</div>
-              <div class="ctrans">A8 Richtung Salzburg → A1 Westautobahn Richtung Wien</div>
-              <div class="ctrans" style="margin-top:4px">🪪 Österreich Vignette nicht vergessen! (~11,50 €)</div>
-            </div>
-            <div class="cprice cprice-munich">
-              <div class="val">~360 km</div>
-              <div class="lbl">~4 Stunden</div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <section class="hero hero-munich">
+    <div class="hero-pill pill-munich">🍺 Stopover · Tag 1</div>
+    <h1>München entdecken</h1>
+    <p>BMW Museum &amp; Übernachtung · 2 Personen</p>
+    <div class="hotel">🏨 <strong>Leonardo Royal Hotel München</strong> · Ungererstraße 139</div>
+  </section>
 
-      <div style="text-align:center;margin-top:2rem;">
-        <a class="mapbtn mapbtn-munich" href="https://www.google.com/maps/dir/Kaarst/Leonardo+Royal+Hotel+M%C3%BCnchen/Am+Olympiapark+2+M%C3%BCnchen" target="_blank" rel="noopener noreferrer">
-          📍 München Route auf Google Maps
-        </a>
-      </div>
-    </main>
+  <div class="stats">
+    <div class="stat"><div class="stat-val sv-munich">05:00</div><div class="stat-lbl">Abfahrt Kaarst</div></div>
+    <div class="stat"><div class="stat-val sv-munich">~600 km</div><div class="stat-lbl">Fahrtstrecke</div></div>
+    <div class="stat"><div class="stat-val sv-munich">~5–6 h</div><div class="stat-lbl">Fahrzeit</div></div>
+    <div class="stat"><div class="stat-val sv-munich">~30 €</div><div class="stat-lbl">BMW Museum (2 P.)</div></div>
   </div>
 
-  <!-- ══════════════ WIEN ══════════════ -->
-  <div id="tab-wien" class="tab-section">
-    <section class="hero hero-wien">
-      <div class="hero-pill hero-pill-wien">📅 23. Mai – 26. Mai 2026</div>
-      <h1>Wien entdecken</h1>
-      <p>4 Tage · 2 Personen · 6 Sehenswürdigkeiten</p>
-      <div class="hotel">🏨 <strong>Rioca Vienna Posto 2</strong> · Viehmarktgasse 4, 1030 Wien</div>
-    </section>
+  <div class="main-content">
+    <div class="day">
+      <div class="day-hd">
+        <div class="day-num dn-munich"><span class="n">1</span><span class="l">Tag</span></div>
+        <div>
+          <div class="day-title">Anreisetag</div>
+          <div class="day-sub">Abfahrt 05:00 Uhr · A3 / A9 Richtung München</div>
+        </div>
+      </div>
+      <div class="cards">
 
-    <div class="stats">
-      <div class="stat"><div class="stat-val stat-val-wien">266,60 €</div><div class="stat-lbl">Gesamt (2 Pers.)</div></div>
-      <div class="stat"><div class="stat-val stat-val-wien">133,30 €</div><div class="stat-lbl">Pro Person</div></div>
-      <div class="stat"><div class="stat-val stat-val-wien">6</div><div class="stat-lbl">Sehenswürdigkeiten</div></div>
-      <div class="stat"><div class="stat-val stat-val-wien">4</div><div class="stat-lbl">Tage</div></div>
+        <div class="card" onclick="window.open('https://www.google.com/maps?q=Am+Olympiapark+2,+80809+M%C3%BCnchen','_blank')">
+          <div>
+            <div class="em">🏎️</div>
+            <div class="cname">BMW Museum</div>
+            <div class="ctrans">🚇 U3 Olympiazentrum · Am Olympiapark 2</div>
+            <div class="ctrans" style="margin-top:4px">🕐 Di–So · 10:00–18:00 Uhr</div>
+          </div>
+          <div class="cprice">
+            <div class="val cv-munich">~30,00 €</div>
+            <div class="lbl">2 Personen</div>
+          </div>
+        </div>
+
+        <div class="card" onclick="window.open('https://www.google.com/maps?q=Ungererstra%C3%9Fe+139,+80805+M%C3%BCnchen','_blank')">
+          <div>
+            <div class="em">🏨</div>
+            <div class="cname">Leonardo Royal Hotel München</div>
+            <div class="ctrans">📍 Ungererstraße 139, 80805 München</div>
+            <div class="ctrans" style="margin-top:4px">🌙 Übernachtung · Weiterfahrt am nächsten Morgen</div>
+          </div>
+          <div class="cprice">
+            <div class="val cv-munich">Hotel</div>
+            <div class="lbl">Übernachtung</div>
+          </div>
+        </div>
+
+        <div class="card" onclick="window.open('https://www.google.com/maps/dir/M%C3%BCnchen/Wien','_blank')">
+          <div>
+            <div class="em">🚗</div>
+            <div class="cname">Weiterfahrt nach Wien</div>
+            <div class="ctrans">🛣️ A8 Richtung Salzburg → A1 Westautobahn Richtung Wien</div>
+            <div class="ctrans" style="margin-top:4px">🪪 Österreich Vignette nicht vergessen! (~11,50 €)</div>
+          </div>
+          <div class="cprice">
+            <div class="val cv-munich">~360 km</div>
+            <div class="lbl">~4 Stunden</div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
-    <main>
-      <!-- Tag 1 -->
-      <div class="day">
-        <div class="day-hd">
-          <div class="day-num day-num-wien"><span class="n">1</span><span class="l">Sa</span></div>
-          <div>
-            <div class="day-title">Samstag, 23. Mai</div>
-            <div class="day-sub">Schönbrunn &amp; Hundertwasser</div>
-          </div>
-        </div>
-        <div class="cards">
-          <div class="card" onclick="window.open('https://www.google.com/maps?q=Sch%C3%B6nbrunner+Schlo%C3%9Fstra%C3%9Fe+47,+1130+Wien','_blank')">
-            <div><div class="em">🏰</div><div class="cname">Schloss Schönbrunn</div><div class="ctrans">🚇 U4 Schönbrunn</div></div>
-            <div class="cprice cprice-wien"><div class="val">48,00 €</div><div class="lbl">2 Personen</div></div>
-          </div>
-          <div class="card" onclick="window.open('https://www.google.com/maps?q=Untere+Wei%C3%9Fgerberstra%C3%9Fe+13,+1030+Wien','_blank')">
-            <div><div class="em">🎨</div><div class="cname">KunstHaus Wien (Hundertwasser)</div><div class="ctrans">🚇 U3 Rochusgasse</div></div>
-            <div class="cprice cprice-wien"><div class="val">32,00 €</div><div class="lbl">2 Personen</div></div>
-          </div>
-        </div>
-      </div>
-      <hr>
+    <div style="text-align:center;margin-top:2rem;">
+      <a class="mapbtn mb-munich"
+         href="https://www.google.com/maps/dir/Kaarst/Am+Olympiapark+2+M%C3%BCnchen/Leonardo+Royal+Hotel+M%C3%BCnchen/Viehmarktgasse+4+Wien"
+         target="_blank" rel="noopener noreferrer">
+        📍 Gesamte Route auf Google Maps
+      </a>
+    </div>
+  </div>
+</div>
 
-      <!-- Tag 2 -->
-      <div class="day">
-        <div class="day-hd">
-          <div class="day-num day-num-wien"><span class="n">2</span><span class="l">So</span></div>
-          <div>
-            <div class="day-title">Sonntag, 24. Mai</div>
-            <div class="day-sub">Stephansdom &amp; Hofburg</div>
-          </div>
-        </div>
-        <div class="cards">
-          <div class="card" onclick="window.open('https://www.google.com/maps?q=Stephansplatz+3,+1010+Wien','_blank')">
-            <div><div class="em">⛪</div><div class="cname">Stephansdom</div><div class="ctrans">🚇 U1/U3 Stephansplatz · inkl. Katakomben &amp; Türme</div></div>
-            <div class="cprice cprice-wien"><div class="val">54,00 €</div><div class="lbl">2 Personen</div></div>
-          </div>
-          <div class="card" onclick="window.open('https://www.google.com/maps?q=Michaelerkuppel,+1010+Wien','_blank')">
-            <div><div class="em">🏛️</div><div class="cname">Hofburg Wien</div><div class="ctrans">🚇 U1/U3 Stephansplatz</div></div>
-            <div class="cprice cprice-wien"><div class="val">39,00 €</div><div class="lbl">2 Personen</div></div>
-          </div>
-        </div>
-      </div>
-      <hr>
 
-      <!-- Tag 3 -->
-      <div class="day">
-        <div class="day-hd">
-          <div class="day-num day-num-wien"><span class="n">3</span><span class="l">Mo</span></div>
-          <div>
-            <div class="day-title">Montag, 25. Mai</div>
-            <div class="day-sub">Schloss Belvedere</div>
-          </div>
-        </div>
-        <div class="cards">
-          <div class="card" onclick="window.open('https://www.google.com/maps?q=Prinz-Eugen-Stra%C3%9Fe+27,+1030+Wien','_blank')">
-            <div><div class="em">🖼️</div><div class="cname">Schloss Belvedere (Oberes Belvedere)</div><div class="ctrans">🚋 Straßenbahn 71 / Bus 69A · inkl. Klimt-Gemälde</div></div>
-            <div class="cprice cprice-wien"><div class="val">53,80 €</div><div class="lbl">2 Personen</div></div>
-          </div>
-        </div>
-      </div>
-      <hr>
+<!-- ════════════════════════════════════
+     WIEN
+════════════════════════════════════ -->
+<div id="tab-wien" class="tab-section">
 
-      <!-- Tag 4 -->
-      <div class="day">
-        <div class="day-hd">
-          <div class="day-num day-num-wien"><span class="n">4</span><span class="l">Di</span></div>
-          <div>
-            <div class="day-title">Dienstag, 26. Mai</div>
-            <div class="day-sub">Albertina · Abreisetag</div>
-          </div>
-        </div>
-        <div class="cards">
-          <div class="card" onclick="window.open('https://www.google.com/maps?q=Albertinaplatz+1,+1010+Wien','_blank')">
-            <div><div class="em">🖼️</div><div class="cname">Albertina</div><div class="ctrans">🚇 U1/U2/U4 Karlsplatz oder Tram D</div></div>
-            <div class="cprice cprice-wien"><div class="val">39,80 €</div><div class="lbl">2 Personen</div></div>
-          </div>
-        </div>
-      </div>
+  <section class="hero hero-wien">
+    <div class="hero-pill pill-wien">📅 23. Mai – 26. Mai 2026</div>
+    <h1>Wien entdecken</h1>
+    <p>4 Tage · 2 Personen · 6 Sehenswürdigkeiten</p>
+    <div class="hotel">🏨 <strong>Rioca Vienna Posto 2</strong> · Viehmarktgasse 4, 1030 Wien</div>
+  </section>
 
-      <div style="text-align:center;margin-top:2rem;">
-        <a class="mapbtn mapbtn-wien" href="https://www.google.com/maps/dir/Sch%C3%B6nbrunner+Schlo%C3%9Fstra%C3%9Fe+47,+1130+Wien/Untere+Wei%C3%9Fgerberstra%C3%9Fe+13,+1030+Wien/Stephansplatz+3,+1010+Wien/Michaelerkuppel,+1010+Wien/Prinz-Eugen-Stra%C3%9Fe+27,+1030+Wien/Albertinaplatz+1,+1010+Wien" target="_blank" rel="noopener noreferrer">
-          📍 Alle Orte auf Google Maps
-        </a>
-      </div>
-    </main>
+  <div class="stats">
+    <div class="stat"><div class="stat-val sv-wien">266,60 €</div><div class="stat-lbl">Gesamt (2 Pers.)</div></div>
+    <div class="stat"><div class="stat-val sv-wien">133,30 €</div><div class="stat-lbl">Pro Person</div></div>
+    <div class="stat"><div class="stat-val sv-wien">6</div><div class="stat-lbl">Sehenswürdigkeiten</div></div>
+    <div class="stat"><div class="stat-val sv-wien">4</div><div class="stat-lbl">Tage</div></div>
   </div>
 
-  <footer>Urlaub 2026 · Finn &amp; Papa · München &amp; Wien · 22.–26. Mai 2026</footer>
+  <div class="main-content">
 
-  <script>
-    function showTab(id, btn) {
-      document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById('tab-' + id).classList.add('active');
-      btn.classList.add('active');
-    }
+    <!-- Tag 1 -->
+    <div class="day">
+      <div class="day-hd">
+        <div class="day-num dn-wien"><span class="n">1</span><span class="l">Sa</span></div>
+        <div>
+          <div class="day-title">Samstag, 23. Mai</div>
+          <div class="day-sub">Schönbrunn &amp; Hundertwasser</div>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card" onclick="window.open('https://www.google.com/maps?q=Sch%C3%B6nbrunner+Schlo%C3%9Fstra%C3%9Fe+47,+1130+Wien','_blank')">
+          <div>
+            <div class="em">🏰</div>
+            <div class="cname">Schloss Schönbrunn</div>
+            <div class="ctrans">🚇 U4 Schönbrunn</div>
+          </div>
+          <div class="cprice">
+            <div class="val cv-wien">48,00 €</div>
+            <div class="lbl">2 Personen</div>
+          </div>
+        </div>
+        <div class="card" onclick="window.open('https://www.google.com/maps?q=Untere+Wei%C3%9Fgerberstra%C3%9Fe+13,+1030+Wien','_blank')">
+          <div>
+            <div class="em">🎨</div>
+            <div class="cname">KunstHaus Wien (Hundertwasser)</div>
+            <div class="ctrans">🚇 U3 Rochusgasse</div>
+          </div>
+          <div class="cprice">
+            <div class="val cv-wien">32,00 €</div>
+            <div class="lbl">2 Personen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
 
-    (function () {
-      const t = document.querySelector('[data-theme-toggle]');
-      const r = document.documentElement;
-      let d = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    <!-- Tag 2 -->
+    <div class="day">
+      <div class="day-hd">
+        <div class="day-num dn-wien"><span class="n">2</span><span class="l">So</span></div>
+        <div>
+          <div class="day-title">Sonntag, 24. Mai</div>
+          <div class="day-sub">Stephansdom &amp; Hofburg</div>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card" onclick="window.open('https://www.google.com/maps?q=Stephansplatz+3,+1010+Wien','_blank')">
+          <div>
+            <div class="em">⛪</div>
+            <div class="cname">Stephansdom</div>
+            <div class="ctrans">🚇 U1/U3 Stephansplatz · inkl. Katakomben &amp; Türme</div>
+          </div>
+          <div class="cprice">
+            <div class="val cv-wien">54,00 €</div>
+            <div class="lbl">2 Personen</div>
+          </div>
+        </div>
+        <div class="card" onclick="window.open('https://www.google.com/maps?q=Michaelerkuppel,+1010+Wien','_blank')">
+          <div>
+            <div class="em">🏛️</div>
+            <div class="cname">Hofburg Wien</div>
+            <div class="ctrans">🚇 U1/U3 Stephansplatz</div>
+          </div>
+          <div class="cprice">
+            <div class="val cv-wien">39,00 €</div>
+            <div class="lbl">2 Personen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <!-- Tag 3 -->
+    <div class="day">
+      <div class="day-hd">
+        <div class="day-num dn-wien"><span class="n">3</span><span class="l">Mo</span></div>
+        <div>
+          <div class="day-title">Montag, 25. Mai</div>
+          <div class="day-sub">Schloss Belvedere</div>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card" onclick="window.open('https://www.google.com/maps?q=Prinz-Eugen-Stra%C3%9Fe+27,+1030+Wien','_blank')">
+          <div>
+            <div class="em">🖼️</div>
+            <div class="cname">Schloss Belvedere (Oberes Belvedere)</div>
+            <div class="ctrans">🚋 Straßenbahn 71 / Bus 69A · inkl. Klimt-Gemälde</div>
+          </div>
+          <div class="cprice">
+            <div class="val cv-wien">53,80 €</div>
+            <div class="lbl">2 Personen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <!-- Tag 4 -->
+    <div class="day">
+      <div class="day-hd">
+        <div class="day-num dn-wien"><span class="n">4</span><span class="l">Di</span></div>
+        <div>
+          <div class="day-title">Dienstag, 26. Mai</div>
+          <div class="day-sub">Albertina · Abreisetag</div>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card" onclick="window.open('https://www.google.com/maps?q=Albertinaplatz+1,+1010+Wien','_blank')">
+          <div>
+            <div class="em">🖼️</div>
+            <div class="cname">Albertina</div>
+            <div class="ctrans">🚇 U1/U2/U4 Karlsplatz oder Tram D</div>
+          </div>
+          <div class="cprice">
+            <div class="val cv-wien">39,80 €</div>
+            <div class="lbl">2 Personen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:2rem;">
+      <a class="mapbtn mb-wien"
+         href="https://www.google.com/maps/dir/Sch%C3%B6nbrunner+Schlo%C3%9Fstra%C3%9Fe+47,+1130+Wien/Untere+Wei%C3%9Fgerberstra%C3%9Fe+13,+1030+Wien/Stephansplatz+3,+1010+Wien/Michaelerkuppel,+1010+Wien/Prinz-Eugen-Stra%C3%9Fe+27,+1030+Wien/Albertinaplatz+1,+1010+Wien"
+         target="_blank" rel="noopener noreferrer">
+        📍 Alle Orte auf Google Maps
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+<footer>Urlaub 2026 · Finn &amp; Papa · München &amp; Wien · 22.–26. Mai 2026</footer>
+
+<script>
+  function showTab(id, btn) {
+    document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  (function () {
+    const t = document.querySelector('[data-theme-toggle]');
+    const r = document.documentElement;
+    let d = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    r.setAttribute('data-theme', d);
+    const sun  = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+    const moon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    t.innerHTML = d === 'dark' ? sun : moon;
+    t.addEventListener('click', () => {
+      d = d === 'dark' ? 'light' : 'dark';
       r.setAttribute('data-theme', d);
-      const sun = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
-      const moon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
       t.innerHTML = d === 'dark' ? sun : moon;
-      t.addEventListener('click', () => {
-        d = d === 'dark' ? 'light' : 'dark';
-        r.setAttribute('data-theme', d);
-        t.innerHTML = d === 'dark' ? sun : moon;
-      });
-    })();
-  </script>
+    });
+  })();
+</script>
 </body>
 </html>
