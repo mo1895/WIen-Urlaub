@@ -410,7 +410,7 @@
     .map-link:hover { background: var(--ink-2); transform: translateY(-2px); }
     .map-link svg { flex-shrink: 0; }
 
-    /* ─── NO DARK MODE (nur White‑Mode) ─── */
+    /* ─── NO DARK MODE (nur White-Modus) ─── */
     body.dark { display: none; }
   </style>
 </head>
@@ -421,7 +421,6 @@
       <div class="brand-eyebrow">Reiseplan 2026</div>
       <div class="brand-title">Finn &amp; Papa &nbsp;·&nbsp; Kaarst → München → Wien</div>
     </div>
-    <!-- Dark Mode Button entfernt -->
   </header>
 
   <nav class="chapter-nav" role="tablist">
@@ -437,18 +436,18 @@
   </nav>
 
 
-  <!-- ══════════════ I. MÜNCHEN (inkl. Freitag Anreisetag) ══════════════ -->
+  <!-- ══════════════ I. MÜNCHEN (Freitag + Samstagvormittag) ══════════════ -->
   <div id="ch-munich" class="chapter active" style="--c-accent:var(--gold)">
 
     <div class="cover">
       <div>
-        <div class="cover-kicker">Kapitel I &nbsp; Freitag, 22. Mai – Samstag, 23. Mai 2026</div>
+        <div class="cover-kicker">Kapitel I &nbsp; Freitag, 22. Mai 2026</div>
         <h1 class="cover-h1">Mün&shy;<em>chen</em></h1>
-        <p class="cover-sub">BMW Museum, Olympiapark &amp; eine Nacht in der Hauptstadt Bayerns.</p>
+        <p class="cover-sub">BMW Museum, Abends ein bisschen Stadt luft schnuppern.</p>
       </div>
       <div class="cover-meta">
-        <div class="cover-date">2</div>
-        <div class="cover-date-lbl">Tage in München</div>
+        <div class="cover-date">1</div>
+        <div class="cover-date-lbl">Tag in München</div>
       </div>
     </div>
 
@@ -467,7 +466,7 @@
 
     <div class="body-wrap">
 
-      <!-- Tag 1 – Freitag: Anreise nach München -->
+      <!-- Freitag – Tag 1 -->
       <div class="day-block">
         <div class="day-label">
           <div class="day-circle">
@@ -476,11 +475,12 @@
           </div>
           <div class="day-title-wrap">
             <div class="day-title">Freitag, 22. Mai 2026</div>
-            <div class="day-subtitle">Anreise Kaarst → München</div>
+            <div class="day-subtitle">Abfahrt Kaarst → BMW Museum → Hotel</div>
           </div>
         </div>
 
         <div class="entries">
+
           <div class="entry" style="cursor:default">
             <div class="entry-idx">01</div>
             <div class="entry-body">
@@ -496,8 +496,29 @@
             </div>
           </div>
 
-          <a class="entry" href="https://www.google.com/maps?q=Ungererstra%C3%9Fe+139,+80805+M%C3%BCnchen" target="_blank" rel="noopener">
+          <a class="entry" href="https://www.google.com/maps?q=Am+Olympiapark+2,+80809+M%C3%BCnchen" target="_blank" rel="noopener">
             <div class="entry-idx">02</div>
+            <div class="entry-body">
+              <div class="entry-name">BMW Museum</div>
+              <div class="entry-meta">
+                <span class="entry-meta-item">地铁 U3 Olympic Center</span>
+                <span class="entry-meta-item">📍 Am Olympiapark 2</span>
+                <span class="entry-meta-item">🕐 Öffnungszeiten nachsehen</span>
+              </div>
+            </div>
+            <div class="entry-price-wrap">
+              <div class="entry-price">~30 €</div>
+              <div class="entry-price-lbl">2 Personen</div>
+            </div>
+            <svg class="entry-ext" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+
+          <a class="entry" href="https://www.google.com/maps?q=Ungererstra%C3%9Fe+139,+80805+M%C3%BCnchen" target="_blank" rel="noopener">
+            <div class="entry-idx">03</div>
             <div class="entry-body">
               <div class="entry-name">Hotel‑Check‑in</div>
               <div class="entry-meta">
@@ -518,70 +539,16 @@
           </a>
 
           <div class="entry" style="cursor:default">
-            <div class="entry-idx">03</div>
-            <div class="entry-body">
-              <div class="entry-name">Abendspaziergang &amp; Essen</div>
-              <div class="entry-meta">
-                <span class="entry-meta-item">徒步 Nahe zum Hotel</span>
-                <span class="entry-meta-item">🍽️ Einfach irgendwo was Leckeres essen</span>
-              </div>
-            </div>
-            <div class="entry-price-wrap">
-              <div class="entry-price" style="color:var(--gold)">ca. 10–15 €</div>
-              <div class="entry-price-lbl">2 Personen</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="ch-divider">Samstag, 23. Mai 2026</div>
-
-      <!-- Tag 2 – Samstag: Programm München -->
-      <div class="day-block">
-        <div class="day-label">
-          <div class="day-circle">
-            <div class="day-num-big">2</div>
-            <div class="day-num-sub">Sa</div>
-          </div>
-          <div class="day-title-wrap">
-            <div class="day-title">Samstag, 23. Mai 2026</div>
-            <div class="day-subtitle">BMW Museum, Olympiapark &amp; Bummel</div>
-          </div>
-        </div>
-
-        <div class="entries">
-          <a class="entry" href="https://www.google.com/maps?q=Am+Olympiapark+2,+80809+M%C3%BCnchen" target="_blank" rel="noopener">
             <div class="entry-idx">04</div>
             <div class="entry-body">
-              <div class="entry-name">BMW Museum</div>
+              <div class="entry-name">Abendbummel in München</div>
               <div class="entry-meta">
-                <span class="entry-meta-item">地铁 U3 Olympiazentrum</span>
-                <span class="entry-meta-item">📍 Am Olympiapark 2</span>
-                <span class="entry-meta-item">🕐 Di–So · 10:00–18:00 Uhr</span>
+                <span class="entry-meta-item">📍 Altstadt, Marienplatz, Seidlviertel</span>
+                <span class="entry-meta-item">🍽️ Einfach irgendwo essen und Glühwein oder Bier probieren</span>
               </div>
             </div>
             <div class="entry-price-wrap">
-              <div class="entry-price">~30 €</div>
-              <div class="entry-price-lbl">2 Personen</div>
-            </div>
-            <svg class="entry-ext" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-          </a>
-
-          <div class="entry" style="cursor:default">
-            <div class="entry-idx">05</div>
-            <div class="entry-body">
-              <div class="entry-name">Mittag-/Abendessen um Am Olympiapark</div>
-              <div class="entry-meta">
-                <span class="entry-meta-item">🍽️ Restaurants im Olympiapark‑Bereich</span>
-                <span class="entry-meta-item">☕ Kaffee oder Eis anschließend</span>
-              </div>
-            </div>
-            <div class="entry-price-wrap">
-              <div class="entry-price" style="color:var(--gold)">ca. 20–30 €</div>
+              <div class="entry-price" style="color:var(--gold)">ca. 15–25 €</div>
               <div class="entry-price-lbl">2 Personen</div>
             </div>
           </div>
@@ -606,9 +573,9 @@
 
     <div class="cover">
       <div>
-        <div class="cover-kicker">Kapitel II &nbsp; Sonntag, 24. Mai 2026</div>
+        <div class="cover-kicker">Kapitel II &nbsp; Samstag, 24. Mai 2026</div>
         <h1 class="cover-h1">Die<br><em>Fahrt</em></h1>
-        <p class="cover-sub">München → Wien &nbsp;·&nbsp; ~360 km auf der A8 und A1 durch Österreich.</p>
+        <p class="cover-sub">München → Wien &nbsp;·&nbsp; ~360 km auf der A8 und A1.</p>
       </div>
       <div class="cover-meta">
         <div class="cover-date">360</div>
@@ -678,26 +645,6 @@
               <div class="entry-price-lbl">Sparen</div>
             </div>
           </div>
-
-          <a class="entry" href="https://www.google.com/maps?q=Parkgarage+Wien+3+Bezirk" target="_blank" rel="noopener">
-            <div class="entry-idx">03</div>
-            <div class="entry-body">
-              <div class="entry-name">Parken in Wien</div>
-              <div class="entry-meta">
-                <span class="entry-meta-item">📍 3. Bezirk · Kurzparkzone beachten</span>
-                <span class="entry-meta-item">🚗 Parkgarage empfohlen · ~3–5 € / Std.</span>
-              </div>
-            </div>
-            <div class="entry-price-wrap">
-              <div class="entry-price" style="color:var(--rust)">Info</div>
-              <div class="entry-price-lbl">Wien</div>
-            </div>
-            <svg class="entry-ext" style="color:var(--rust)" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-          </a>
         </div>
 
         <div class="map-row">
@@ -714,26 +661,26 @@
   </div>
 
 
-  <!-- ══════════════ III. WIEN (Montag + Dienstag Rückfahrt) ══════════════ -->
+  <!-- ══════════════ III. WIEN (ab 15 Uhr + Rest des Urlaubs) ══════════════ -->
   <div id="ch-wien" class="chapter" style="--c-accent:var(--forest)">
 
     <div class="cover">
       <div>
-        <div class="cover-kicker">Kapitel III &nbsp; Montag, 25. Mai – Dienstag, 26. Mai 2026</div>
+        <div class="cover-kicker">Kapitel III &nbsp; Samstag, 25. Mai – Dienstag, 28. Mai 2026</div>
         <h1 class="cover-h1"><em>Wien</em></h1>
-        <p class="cover-sub">2 Tage, 2 Personen, 6 Sehenswürdigkeiten, mit Rückfahrt am Dienstag.</p>
+        <p class="cover-sub">4 Tage, 2 Personen, 7 Haupt‑Highlights, abends ruhig und tagsüber voll.</p>
       </div>
       <div class="cover-meta">
-        <div class="cover-date">2</div>
+        <div class="cover-date">4</div>
         <div class="cover-date-lbl">Tage in Wien</div>
       </div>
     </div>
 
     <div class="stats-strip" style="--c-accent:var(--forest)">
-      <div class="stat-item"><div class="stat-num">266,60 €</div><div class="stat-label">Gesamt</div></div>
-      <div class="stat-item"><div class="stat-num">133,30 €</div><div class="stat-label">Pro Person</div></div>
-      <div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Sehenswürdigkeiten</div></div>
-      <div class="stat-item"><div class="stat-num">2</div><div class="stat-label">Tage</div></div>
+      <div class="stat-item"><div class="stat-num">296,60 €</div><div class="stat-label">Gesamt</div></div>
+      <div class="stat-item"><div class="stat-num">148,30 €</div><div class="stat-label">Pro Person</div></div>
+      <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">Sehenswürdigkeiten</div></div>
+      <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Tage</div></div>
     </div>
 
     <div class="hotel-strip" style="--c-accent:var(--forest)">
@@ -744,37 +691,23 @@
 
     <div class="body-wrap">
 
-      <!-- Tag I – Montag: Anreisetag + Abend -->
+      <!-- Samstag – Anreisetag ab 15 Uhr -->
       <div class="day-block">
         <div class="day-label">
           <div class="day-circle">
             <div class="day-num-big">1</div>
-            <div class="day-num-sub">Mo</div>
+            <div class="day-num-sub">Sa</div>
           </div>
           <div class="day-title-wrap">
-            <div class="day-title">Montag, 25. Mai 2026</div>
-            <div class="day-subtitle">Anreisetag &amp; Abendspaziergang</div>
+            <div class="day-title">Samstag, 25. Mai 2026</div>
+            <div class="day-subtitle">Anreisetag, Check‑in, ab 15 Uhr ein bisschen Wien</div>
           </div>
         </div>
 
         <div class="entries">
-          <div class="entry" style="cursor:default">
-            <div class="entry-idx">01</div>
-            <div class="entry-body">
-              <div class="entry-name">Anreise Kaarst → München → Wien</div>
-              <div class="entry-meta">
-                <span class="entry-meta-item">🚗 600 km → 360 km · A3/A9 → A8/A1</span>
-                <span class="entry-meta-item">🕒 Gesamt ca. 9–10 Stunden Fahrzeit</span>
-              </div>
-            </div>
-            <div class="entry-price-wrap">
-              <div class="entry-price" style="color:var(--forest)">Fahrt</div>
-              <div class="entry-price-lbl">Strecke</div>
-            </div>
-          </div>
 
           <a class="entry" href="https://www.google.com/maps?q=Viehmarktgasse+4,+1030+Wien" target="_blank" rel="noopener">
-            <div class="entry-idx">02</div>
+            <div class="entry-idx">01</div>
             <div class="entry-body">
               <div class="entry-name">Hotel‑Check‑in</div>
               <div class="entry-meta">
@@ -795,12 +728,12 @@
           </a>
 
           <a class="entry" href="https://www.google.com/maps?q=Stephansplatz+3,+1010+Wien" target="_blank" rel="noopener">
-            <div class="entry-idx">03</div>
+            <div class="entry-idx">02</div>
             <div class="entry-body">
-              <div class="entry-name">Spaziergang &amp; Kaffee</div>
+              <div class="entry-name">Kurzer Bummel zur Stephansdom‑Gegend</div>
               <div class="entry-meta">
-                <span class="entry-meta-item">📍 Fußläufiger Bummel zur Stephansplatz‑Gegend</span>
-                <span class="entry-meta-item">☕ Kaffee oder Eis zur Einstimmung</span>
+                <span class="entry-meta-item">地铁 Fußläufig vom Hotel</span>
+                <span class="entry-meta-item">☕ Kaffee oder Eis nach der Fahrt</span>
               </div>
             </div>
             <div class="entry-price-wrap">
@@ -813,26 +746,96 @@
               <line x1="10" y1="14" x2="21" y2="3"/>
             </svg>
           </a>
+
+          <div class="entry" style="cursor:default">
+            <div class="entry-idx">03</div>
+            <div class="entry-body">
+              <div class="entry-name">Abendessen in der Innenstadt</div>
+              <div class="entry-meta">
+                <span class="entry-meta-item">🍽️ Kleines Restaurant rund um Stephansplatz oder Kärntner Straße</span>
+              </div>
+            </div>
+            <div class="entry-price-wrap">
+              <div class="entry-price" style="color:var(--forest)">ca. 25–35 €</div>
+              <div class="entry-price-lbl">2 Personen</div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="ch-divider">Dienstag, 26. Mai 2026</div>
+      <div class="ch-divider">Montag, 26. Mai 2026</div>
 
-      <!-- Dienstag (mit Rückfahrtabend) -->
+      <!-- Montag – Titelhighlight 1 -->
       <div class="day-block">
         <div class="day-label">
           <div class="day-circle">
             <div class="day-num-big">2</div>
+            <div class="day-num-sub">Mo</div>
+          </div>
+          <div class="day-title-wrap">
+            <div class="day-title">Montag, 26. Mai 2026</div>
+            <div class="day-subtitle">Innenstadt: Hofburg und Kunsthistorisches Museum</div>
+          </div>
+        </div>
+        <div class="entries">
+          <a class="entry" href="https://www.google.com/maps?q=Hofburg+Wien" target="_blank" rel="noopener">
+            <div class="entry-idx">04</div>
+            <div class="entry-body">
+              <div class="entry-name">Hofburg Wien</div>
+              <div class="entry-meta">
+                <span class="entry-meta-item">地铁 U1/U2/U4 Stephansplatz</span>
+                <span class="entry-meta-item">🏛️ Kaiserliche Prunkräume</span>
+              </div>
+            </div>
+            <div class="entry-price-wrap">
+              <div class="entry-price" style="color:var(--forest)">39,00 €</div>
+              <div class="entry-price-lbl">2 Personen</div>
+            </div>
+            <svg class="entry-ext" style="color:var(--forest)" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+          <a class="entry" href="https://www.google.com/maps?q=Kunsthistorisches+Museum,+Vienna" target="_blank" rel="noopener">
+            <div class="entry-idx">05</div>
+            <div class="entry-body">
+              <div class="entry-name">Kunsthistorisches Museum</div>
+              <div class="entry-meta">
+                <span class="entry-meta-item">地铁 U2 Theresienstraße</span>
+                <span class="entry-meta-item">🖼️ Altmeister, Erdapfel, Antikensammlung</span>
+              </div>
+            </div>
+            <div class="entry-price-wrap">
+              <div class="entry-price" style="color:var(--forest)">46,00 €</div>
+              <div class="entry-price-lbl">2 Personen</div>
+            </div>
+            <svg class="entry-ext" style="color:var(--forest)" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="ch-divider">Dienstag, 27. Mai 2026</div>
+
+      <!-- Dienstag – Stephansdom + MuseumsQuartier -->
+      <div class="day-block">
+        <div class="day-label">
+          <div class="day-circle">
+            <div class="day-num-big">3</div>
             <div class="day-num-sub">Di</div>
           </div>
           <div class="day-title-wrap">
-            <div class="day-title">Dienstag, 26. Mai 2026</div>
-            <div class="day-subtitle">Vormittags Sightseeing, nachmittags Rückfahrt nach Hause</div>
+            <div class="day-title">Dienstag, 27. Mai 2026</div>
+            <div class="day-subtitle">Stephansdom, Café und MuseumsQuartier</div>
           </div>
         </div>
         <div class="entries">
           <a class="entry" href="https://www.google.com/maps?q=Stephansplatz+3,+1010+Wien" target="_blank" rel="noopener">
-            <div class="entry-idx">04</div>
+            <div class="entry-idx">06</div>
             <div class="entry-body">
               <div class="entry-name">Stephansdom</div>
               <div class="entry-meta">
@@ -850,56 +853,18 @@
               <line x1="10" y1="14" x2="21" y2="3"/>
             </svg>
           </a>
-          <a class="entry" href="https://www.google.com/maps?q=Michaelerkuppel,+1010+Wien" target="_blank" rel="noopener">
-            <div class="entry-idx">05</div>
-            <div class="entry-body">
-              <div class="entry-name">Hofburg Wien</div>
-              <div class="entry-meta">
-                <span class="entry-meta-item">地铁 U1/U3 Stephansplatz</span>
-                <span class="entry-meta-item">🏛️ Kaiserliche Prunkräume</span>
-              </div>
-            </div>
-            <div class="entry-price-wrap">
-              <div class="entry-price" style="color:var(--forest)">39,00 €</div>
-              <div class="entry-price-lbl">2 Personen</div>
-            </div>
-            <svg class="entry-ext" style="color:var(--forest)" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-          </a>
-          <a class="entry" href="https://www.google.com/maps?q=Prinz-Eugen-Stra%C3%9Fe+27,+1030+Wien" target="_blank" rel="noopener">
-            <div class="entry-idx">06</div>
-            <div class="entry-body">
-              <div class="entry-name">Schloss Belvedere (Oberes Belvedere)</div>
-              <div class="entry-meta">
-                <span class="entry-meta-item">🚋 Straßenbahn 71 / Bus 69A</span>
-                <span class="entry-meta-item">🖼️ inkl. Klimt · Der Kuss</span>
-              </div>
-            </div>
-            <div class="entry-price-wrap">
-              <div class="entry-price" style="color:var(--forest)">53,80 €</div>
-              <div class="entry-price-lbl">2 Personen</div>
-            </div>
-            <svg class="entry-ext" style="color:var(--forest)" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-          </a>
-          <a class="entry" href="https://www.google.com/maps?q=Albertinaplatz+1,+1010+Wien" target="_blank" rel="noopener">
+          <a class="entry" href="https://www.google.com/maps?q=Museumsquartier+Wien" target="_blank" rel="noopener">
             <div class="entry-idx">07</div>
             <div class="entry-body">
-              <div class="entry-name">Albertina</div>
+              <div class="entry-name">MuseumsQuartier</div>
               <div class="entry-meta">
-                <span class="entry-meta-item">地铁 U1/U2/U4 Karlsplatz · Tram D</span>
-                <span class="entry-meta-item">🖼️ Grafische Sammlung · Picasso · Monet</span>
+                <span class="entry-meta-item">地铁 U2 Museumsquartier</span>
+                <span class="entry-meta-item">🖼️ Kunst, Design, Terrasse mit Blick</span>
               </div>
             </div>
             <div class="entry-price-wrap">
-              <div class="entry-price" style="color:var(--forest)">39,80 €</div>
-              <div class="entry-price-lbl">2 Personen</div>
+              <div class="entry-price" style="color:var(--forest)">kostenlos / Café ↗</div>
+              <div class="entry-price-lbl">Variabel</div>
             </div>
             <svg class="entry-ext" style="color:var(--forest)" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
@@ -910,70 +875,24 @@
         </div>
       </div>
 
-      <!-- Rückfahrt -->
+      <div class="ch-divider">Mittwoch, 28. Mai 2026</div>
+
+      <!-- Mittwoch – Schloss Belvedere -->
       <div class="day-block">
         <div class="day-label">
           <div class="day-circle">
-            <div class="day-num-big">→</div>
-            <div class="day-num-sub">Heim</div>
+            <div class="day-num-big">4</div>
+            <div class="day-num-sub">Mi</div>
           </div>
           <div class="day-title-wrap">
-            <div class="day-title">Rückfahrt Kaarst</div>
-            <div class="day-subtitle">Dienstagabend · 26. Mai 2026</div>
+            <div class="day-title">Mittwoch, 28. Mai 2026</div>
+            <div class="day-subtitle">Schloss Belvedere &amp; Klimt</div>
           </div>
         </div>
         <div class="entries">
-          <div class="entry" style="cursor:default">
+          <a class="entry" href="https://www.google.com/maps?q=Prinz-Eugen-Stra%C3%9Fe+27,+1030+Wien" target="_blank" rel="noopener">
             <div class="entry-idx">08</div>
             <div class="entry-body">
-              <div class="entry-name">Rückfahrt Wien → München → Kaarst</div>
+              <div class="entry-name">Schloss Belvedere (Oberes Belvedere)</div>
               <div class="entry-meta">
-                <span class="entry-meta-item">🚗 360 km → 600 km · A1 → A8 → A3/A9</span>
-                <span class="entry-meta-item">🕒 Gesamt ca. 9–10 Stunden Fahrzeit</span>
-              </div>
-            </div>
-            <div class="entry-price-wrap">
-              <div class="entry-price" style="color:var(--forest)">Fahrt</div>
-              <div class="entry-price-lbl">Strecke</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="map-row">
-        <a class="map-link" style="background:var(--forest)"
-           href="https://www.google.com/maps/dir/Leonardo+Royal+Hotel+M%C3%BCnchen/Viehmarktgasse+4,+1030+Wien/Stephansplatz+3,+1010+Wien/Michaelerkuppel,+1010+Wien/Prinz-Eugen-Stra%C3%9Fe+27,+1030+Wien/Albertinaplatz+1,+1010+Wien"
-           target="_blank" rel="noopener">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-            <circle cx="12" cy="10" r="3"/>
-          </svg>
-          Alle Orte auf Google Maps
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <footer style="text-align:center;padding:32px 16px;border-top:1px solid var(--line);font-size:11px;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase;">
-    Urlaub 2026 &nbsp;·&nbsp; Finn &amp; Papa &nbsp;·&nbsp; 22.–26. Mai 2026
-  </footer>
-
-  <script>
-    (function(){
-      const btns     = document.querySelectorAll('.chapter-btn');
-      const chapters = document.querySelectorAll('.chapter');
-
-      btns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const id = btn.dataset.chapter;
-          btns.forEach(b => b.classList.remove('active'));
-          chapters.forEach(c => c.classList.remove('active'));
-          btn.classList.add('active');
-          document.getElementById('ch-' + id).classList.add('active');
-          window.scrollTo({ top: 57, behavior: 'smooth' });
-        });
-      });
-    })();
-  </script>
-</body>
-</html>
+                <span class="entry-meta-item">🚋 Straßenbahn 71 / Bus 69A
