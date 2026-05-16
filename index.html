@@ -1,119 +1,558 @@
 <!DOCTYPE html>
 <html lang="de" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Urlaub 2026 – München &amp; Wien</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-/* ─ TOKENS ───────────────────────────────────────────── */
-:root{
-  --red:#a83232; --red-h:#8a2020; --red-dim:rgba(168,50,50,.11); --red-light:#f5e8e8;
-  --blue:#1e5fa0; --blue-h:#164a82; --blue-light:#e5eef8;
-  --green:#1a6b5e; --green-h:#125248; --green-light:#e4f2ef;
-  --bg:#faf8f4; --surface:#ffffff; --surface2:#f7f4f0; --surface3:#f2ede7;
-  --border:rgba(30,20,10,.09); --divider:rgba(30,20,10,.06);
-  --ink:#1a1510; --ink-mid:#5c5248; --ink-soft:#9e9288; --ink-faint:#cec8c0;
-  --font-serif:'Playfair Display',Georgia,serif;
-  --font-sans:'DM Sans',system-ui,sans-serif;
-  --r-sm:8px; --r-md:14px; --r-lg:20px; --r-xl:28px; --r-full:9999px;
-  --sh-sm:0 1px 4px rgba(26,21,16,.07),0 2px 8px rgba(26,21,16,.04);
-  --sh-md:0 4px 20px rgba(26,21,16,.1),0 1px 4px rgba(26,21,16,.05);
-  --sh-lg:0 12px 48px rgba(26,21,16,.13),0 3px 10px rgba(26,21,16,.06);
-  --ease:cubic-bezier(.16,1,.3,1); --dur:220ms;
-}
-[data-theme="dark"]{
-  --bg:#141110; --surface:#1d1917; --surface2:#231f1d; --surface3:#2a2420;
-  --border:rgba(255,240,220,.08); --divider:rgba(255,240,220,.05);
-  --ink:#e8e0d8; --ink-mid:#948880; --ink-soft:#5e5650; --ink-faint:#3a3530;
-  --red:#d95050; --red-h:#c03838; --red-dim:rgba(217,80,80,.12); --red-light:rgba(217,80,80,.14);
-  --blue:#5090cc; --blue-h:#3a78b8; --blue-light:rgba(80,144,204,.13);
-  --green:#3ea890; --green-h:#2d9080; --green-light:rgba(62,168,144,.13);
-  --sh-sm:0 1px 4px rgba(0,0,0,.3); --sh-md:0 4px 20px rgba(0,0,0,.38); --sh-lg:0 12px 48px rgba(0,0,0,.48);
-}
-@media(prefers-color-scheme:dark){:root:not([data-theme]){--bg:#141110;--surface:#1d1917;--surface2:#231f1d;--surface3:#2a2420;--border:rgba(255,240,220,.08);--divider:rgba(255,240,220,.05);--ink:#e8e0d8;--ink-mid:#948880;--ink-soft:#5e5650;--red:#d95050;--red-h:#c03838;--red-dim:rgba(217,80,80,.12);--red-light:rgba(217,80,80,.14);--blue:#5090cc;--blue-h:#3a78b8;--blue-light:rgba(80,144,204,.13);--green:#3ea890;--green-h:#2d9080;--green-light:rgba(62,168,144,.13);}}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wien Reiseplan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300..700&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --color-bg: #f7f6f2;
+      --color-surface: #f9f8f5;
+      --color-border: #d4d1ca;
+      --color-divider: #dcd9d5;
+      --color-surface-offset: #f3f0ec;
+      --color-text: #28251d;
+      --color-text-muted: #7a7974;
+      --color-text-faint: #bab9b4;
+      --color-primary: #01696f;
+      --color-primary-hover: #0c4e54;
+      --color-primary-highlight: #cedcd8;
+      --shadow-sm: 0 1px 2px oklch(0.2 0.01 80 / 0.06);
+      --shadow-md: 0 4px 12px oklch(0.2 0.01 80 / 0.08);
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --radius-full: 9999px;
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --font-display: "Instrument Serif", Georgia, serif;
+      --font-body: "Work Sans", "Helvetica Neue", sans-serif;
+      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    [data-theme="dark"] {
+      --color-bg: #171614;
+      --color-surface: #1c1b19;
+      --color-border: #393836;
+      --color-divider: #262523;
+      --color-surface-offset: #1d1c1a;
+      --color-text: #cdccca;
+      --color-text-muted: #797876;
+      --color-text-faint: #5a5957;
+      --color-primary: #4f98a3;
+      --color-primary-hover: #227f8b;
+      --color-primary-highlight: #313b3b;
+      --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.2);
+      --shadow-md: 0 4px 12px oklch(0 0 0 / 0.3);
+    }
 
-/* ─ RESET ─────────────────────────────────────────────── */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
-body{font-family:var(--font-sans);font-size:clamp(14.5px,1.5vw,16.5px);color:var(--ink);background:var(--bg);min-height:100dvh;line-height:1.65;transition:background .3s,color .3s;}
-h1,h2,h3,h4{font-family:var(--font-serif);line-height:1.2;}
-button{cursor:pointer;background:none;border:none;font:inherit;color:inherit;}
-a{color:inherit;text-decoration:none;}
-::-webkit-scrollbar{width:5px;height:5px;}
-::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+    }
+    body {
+      min-height: 100dvh;
+      line-height: 1.6;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text);
+      background: var(--color-bg);
+      transition: background var(--transition), color var(--transition);
+    }
+    h1, h2, h3 {
+      text-wrap: balance;
+      line-height: 1.15;
+      font-family: var(--font-display);
+    }
+    button {
+      cursor: pointer;
+      background: none;
+      border: none;
+      font: inherit;
+      color: inherit;
+    }
 
-/* ─ HEADER ─────────────────────────────────────────────── */
-header{position:sticky;top:0;z-index:300;background:var(--surface);border-bottom:1px solid var(--border);box-shadow:var(--sh-sm);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,4vw,40px);height:62px;}
-.hd-logo{display:flex;align-items:center;gap:12px;}
-.hd-logo-icon{width:38px;height:38px;background:var(--red);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform var(--dur) var(--ease);}
-.hd-logo-icon:hover{transform:rotate(-8deg) scale(1.08);}
-.hd-logo-icon svg{color:#fff;}
-.hd-name{font-family:var(--font-serif);font-size:1.1rem;line-height:1;}
-.hd-sub{font-size:.7rem;color:var(--ink-soft);letter-spacing:.03em;margin-top:2px;}
-.hd-actions{display:flex;gap:6px;}
-.icon-btn{width:36px;height:36px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;color:var(--ink-mid);transition:background var(--dur) var(--ease),color var(--dur) var(--ease);}
-.icon-btn:hover{background:var(--surface2);color:var(--ink);}
+    header {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      padding: var(--space-4) var(--space-6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+    .logo svg {
+      color: var(--color-primary);
+    }
+    .logo-text {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+    }
+    .logo-sub {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+    }
+    .toggle {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-full);
+      color: var(--color-text-muted);
+      transition: background var(--transition);
+    }
+    .toggle:hover {
+      background: var(--color-surface-offset);
+      color: var(--color-text);
+    }
 
-/* ─ TAB BAR ────────────────────────────────────────────── */
-.tab-bar{position:sticky;top:62px;z-index:200;background:var(--surface);border-bottom:1px solid var(--border);display:flex;justify-content:center;padding:0 clamp(12px,3vw,32px);gap:2px;overflow-x:auto;scrollbar-width:none;}
-.tab-bar::-webkit-scrollbar{display:none;}
-.tab-item{position:relative;display:flex;align-items:center;gap:8px;padding:0 18px;height:50px;font-size:.85rem;font-weight:500;color:var(--ink-mid);white-space:nowrap;flex-shrink:0;transition:color var(--dur) var(--ease);border:none;background:none;cursor:pointer;}
-.tab-item::after{content:'';position:absolute;bottom:0;left:12px;right:12px;height:2.5px;border-radius:2px 2px 0 0;background:var(--tab-color,var(--red));transform:scaleX(0);transition:transform .3s var(--ease);}
-.tab-item.active{color:var(--ink);}
-.tab-item.active::after{transform:scaleX(1);}
-.tab-item:hover{color:var(--ink);}
-.tab-icon{font-size:1.05rem;}
+    .hero {
+      background: linear-gradient(135deg, var(--color-primary-highlight), var(--color-bg) 60%);
+      padding: var(--space-12) var(--space-6) var(--space-8);
+      text-align: center;
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--color-primary);
+      color: #fff;
+      padding: var(--space-1) var(--space-4);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      margin-bottom: var(--space-4);
+    }
+    .hero h1 {
+      font-size: var(--text-2xl);
+      margin-bottom: var(--space-2);
+    }
+    .hero p {
+      color: var(--color-text-muted);
+      max-width: 100%;
+    }
+    .hotel {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-top: var(--space-4);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-2) var(--space-4);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      box-shadow: var(--shadow-sm);
+    }
+    .hotel strong {
+      color: var(--color-text);
+    }
 
-/* ─ TAB TRANSITIONS ──────────────────────────────────────── */
-.tab-viewport{position:relative;overflow:hidden;}
-.tab-section{display:none;opacity:0;transform:translateY(12px);transition:none;}
-.tab-section.active{display:block;}
-.tab-section.entering{animation:tabEnter .35s var(--ease) forwards;}
-.tab-section.leaving{animation:tabLeave .22s var(--ease) forwards;}
-@keyframes tabEnter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-@keyframes tabLeave{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-8px)}}
+    .stats {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      padding: var(--space-4) var(--space-6);
+      display: flex;
+      justify-content: center;
+      gap: var(--space-8);
+      flex-wrap: wrap;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-val {
+      font-size: var(--text-xl);
+      font-family: var(--font-display);
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+    .stat-lbl {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
 
-/* ─ HERO ───────────────────────────────────────────────── */
-.hero{position:relative;overflow:hidden;padding:clamp(44px,7vw,88px) clamp(16px,5vw,48px) clamp(36px,5vw,64px);display:flex;flex-direction:column;align-items:center;text-align:center;}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 50% -5%,var(--hero-glow,rgba(168,50,50,.11)),transparent 68%);pointer-events:none;}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:7px;padding:5px 16px;border-radius:var(--r-full);font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--hero-pill-bg,var(--red-dim));color:var(--hero-pill-col,var(--red));margin-bottom:18px;}
-.hero h1{font-size:clamp(2rem,4.5vw,3.5rem);font-style:italic;margin-bottom:10px;}
-.hero h1 span{font-style:normal;}
-.hero-sub{font-size:.98rem;color:var(--ink-mid);margin-bottom:24px;}
-.hero-badge{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:10px 20px;font-size:.85rem;box-shadow:var(--sh-sm);}
-.hb-dot{width:8px;height:8px;border-radius:50%;background:var(--hero-accent,var(--red));flex-shrink:0;}
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: var(--space-8) var(--space-4);
+    }
+    .day {
+      margin-bottom: var(--space-10);
+    }
+    .day-hd {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      margin-bottom: var(--space-5);
+    }
+    .day-num {
+      background: var(--color-primary);
+      color: #fff;
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+    .day-num .n {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      line-height: 1;
+    }
+    .day-num .l {
+      font-size: .6rem;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      opacity: .85;
+    }
+    .day-title {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+    }
+    .day-sub {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
 
-/* ─ STAT STRIP ──────────────────────────────────────────── */
-.stat-strip{background:var(--surface);border-bottom:1px solid var(--border);display:flex;justify-content:center;flex-wrap:wrap;}
-.ssi{padding:18px 28px;text-align:center;border-right:1px solid var(--border);}
-.ssi:last-child{border-right:none;}
-.ssv{font-family:var(--font-serif);font-size:1.6rem;line-height:1;color:var(--stat-col,var(--red));font-weight:600;}
-.ssl{font-size:.68rem;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-soft);margin-top:4px;}
+    .cards {
+      display: grid;
+      gap: var(--space-4);
+    }
+    .card {
+      background: var(--color-surface);
+      border: 1px solid oklch(from var(--color-text) l c h / 0.08);
+      border-radius: var(--radius-xl);
+      padding: var(--space-5) var(--space-6);
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: var(--space-2) var(--space-4);
+      align-items: start;
+      transition: box-shadow var(--transition), transform var(--transition);
+      cursor: pointer;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .em {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-1);
+    }
+    .cname {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-1);
+    }
+    .ctrans {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+    }
+    .cprice {
+      text-align: right;
+    }
+    .cprice .val {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-primary);
+      font-family: var(--font-display);
+    }
+    .cprice .lbl {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+    }
 
-/* ─ CONTENT ────────────────────────────────────────────── */
-.wrap{max-width:900px;margin:0 auto;padding:clamp(28px,4vw,56px) clamp(16px,4vw,28px);}
+    hr {
+      border: none;
+      border-top: 1px solid var(--color-divider);
+      margin: var(--space-8) 0;
+    }
 
-/* ─ DAY HEADER ─────────────────────────────────────────── */
-.day-block{margin-bottom:48px;}
-.day-hd{display:flex;align-items:center;gap:18px;margin-bottom:20px;}
-.day-loz{flex-shrink:0;width:56px;height:56px;border-radius:16px;background:var(--loz-bg,var(--red));color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 4px 14px var(--loz-sh,rgba(168,50,50,.32));}
-.loz-n{font-family:var(--font-serif);font-size:1.45rem;line-height:1;font-weight:700;}
-.loz-l{font-size:.58rem;text-transform:uppercase;letter-spacing:.12em;opacity:.8;margin-top:1px;}
-.day-title{font-family:var(--font-serif);font-size:clamp(1.15rem,2.2vw,1.6rem);}
-.day-sub{font-size:.82rem;color:var(--ink-mid);margin-top:3px;}
+    .mapbtn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--color-primary);
+      color: #fff;
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      text-decoration: none;
+      transition: background var(--transition);
+    }
+    .mapbtn:hover {
+      background: var(--color-primary-hover);
+    }
 
-/* ─ EXPANDABLE CARDS ─────────────────────────────────────── */
-.cards{display:grid;gap:14px;}
-.xcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--sh-sm);overflow:hidden;transition:box-shadow var(--dur) var(--ease),transform var(--dur) var(--ease);}
-.xcard:hover{box-shadow:var(--sh-md);transform:translateY(-2px);}
-.xcard-head{display:grid;grid-template-columns:48px 1fr auto;gap:0 16px;align-items:center;padding:18px 20px;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;}
-.xcard-head:focus-visible{outline:2px solid var(--card-accent,var(--red));outline-offset:-2px;}
-.xcard-em{width:48px;height:48px;border-radius:var(--r-sm);background:var(--card-em-bg,var(--red-light));display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;transition:transform var(--dur) var(--ease);}
-.xcard:hover .xcard-em{transform:scale(1.06);}
-.xcard-main{min-width:0;}
-.xcard-name{font-family:var(--font-serif);font-size:1.05rem;margin-bottom:3px;}
-.xcard-hint{font-size:.76rem;color:var(--ink-mid);}
-.xcard-right{display:fl
+    footer {
+      text-align: center;
+      padding: var(--space-8);
+      color: var(--color-text-faint);
+      font-size: var(--text-xs);
+      border-top: 1px solid var(--color-divider);
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        grid-template-columns: 1fr;
+      }
+      .cprice {
+        text-align: left;
+      }
+      header {
+        padding: var(--space-3) var(--space-4);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-label="Wien Logo">
+        <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2" />
+        <path d="M10 20L16 8L22 20" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+        <path d="M12 16h8" stroke="currentColor" stroke-width="2" />
+      </svg>
+      <div>
+        <div class="logo-text">Wien Reiseplan</div>
+        <div class="logo-sub">23.–26. Mai 2026</div>
+      </div>
+    </div>
+    <button class="toggle" data-theme-toggle aria-label="Dark Mode umschalten">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
+    </button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-pill">📅 23. Mai – 26. Mai 2026</div>
+    <h1>Wien entdecken</h1>
+    <p>4 Tage · 2 Personen · 6 Sehenswürdigkeiten</p>
+    <div class="hotel">
+      🏨 <strong>Rioca Vienna Posto 2</strong> · Viehmarktgasse 4, 1030 Wien
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-val">266,60 €</div>
+      <div class="stat-lbl">Gesamt (2 Pers.)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">133,30 €</div>
+      <div class="stat-lbl">Pro Person</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">6</div>
+      <div class="stat-lbl">Sehenswürdigkeiten</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">4</div>
+      <div class="stat-lbl">Tage</div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Tag 1 -->
+    <div class="day">
+      <div class="day-hd">
+        <div class="day-num"><span class="n">1</span><span class="l">Sa</span></div>
+        <div>
+          <div class="day-title">Samstag, 23. Mai</div>
+          <div class="day-sub">Schönbrunn &amp; Hundertwasser</div>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card" onclick="window.open('https://www.google.com/maps?q=Sch%C3%B6nbrunner+Schlo%C3%9Fstra%C3%9Fe+47,+1130+Wien','_blank')">
+          <div>
+            <div class="em">🏰</div>
+            <div class="cname">Schloss Schönbrunn</div>
+            <div class="ctrans">🚇 U4 Schönbrunn</div>
+          </div>
+          <div class="cprice">
+            <div class="val">48,00 €</div>
+            <div class="lbl">2 Personen</div>
+          </div>
+        </div>
+        <div class="card" onclick="window.open('https://www.google.com/maps?q=Untere+Wei%C3%9Fgerberstra%C3%9Fe+13,+1030+Wien','_blank')">
+          <div>
+            <div class="em">🎨</div>
+            <div class="cname">KunstHaus Wien (Hundertwasser)</div>
+            <div class="ctrans">🚇 U3 Rochusgasse</div>
+          </div>
+          <div class="cprice">
+            <div class="val">32,00 €</div>
+            <div class="lbl">2 Personen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <!-- Tag 2 -->
+    <div class="day">
+      <div class="day-hd">
+        <div class="day-num"><span class="n">2</span><span class="l">So</span></div>
+        <div>
+          <div class="day-title">Sonntag, 24. Mai</div>
+          <div class="day-sub">Stephansdom &amp; Hofburg</div>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card" onclick="window.open('https://www.google.com/maps?q=Stephansplatz+3,+1010+Wien','_blank')">
+          <div>
+            <div class="em">⛪</div>
+            <div class="cname">Stephansdom</div>
+            <div class="ctrans">🚇 U1/U3 Stephansplatz · inkl. Katakomben &amp; Türme</div>
+          </div>
+          <div class="cprice">
+            <div class="val">54,00 €</div>
+            <div class="lbl">2 Personen</div>
+          </div>
+        </div>
+        <div class="card" onclick="window.open('https://www.google.com/maps?q=Michaelerkuppel,+1010+Wien','_blank')">
+          <div>
+            <div class="em">🏛️</div>
+            <div class="cname">Hofburg Wien</div>
+            <div class="ctrans">🚇 U1/U3 Stephansplatz</div>
+          </div>
+          <div class="cprice">
+            <div class="val">39,00 €</div>
+            <div class="lbl">2 Personen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <!-- Tag 3 -->
+    <div class="day">
+      <div class="day-hd">
+        <div class="day-num"><span class="n">3</span><span class="l">Mo</span></div>
+        <div>
+          <div class="day-title">Montag, 25. Mai</div>
+          <div class="day-sub">Schloss Belvedere</div>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card" onclick="window.open('https://www.google.com/maps?q=Prinz-Eugen-Stra%C3%9Fe+27,+1030+Wien','_blank')">
+          <div>
+            <div class="em">🖼️</div>
+            <div class="cname">Schloss Belvedere (Oberes Belvedere)</div>
+            <div class="ctrans">🚋 Straßenbahn 71 / Bus 69A · inkl. Klimt-Gemälde</div>
+          </div>
+          <div class="cprice">
+            <div class="val">53,80 €</div>
+            <div class="lbl">2 Personen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <!-- Tag 4 -->
+    <div class="day">
+      <div class="day-hd">
+        <div class="day-num"><span class="n">4</span><span class="l">Di</span></div>
+        <div>
+          <div class="day-title">Dienstag, 26. Mai</div>
+          <div class="day-sub">Albertina · Abreisetag</div>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card" onclick="window.open('https://www.google.com/maps?q=Albertinaplatz+1,+1010+Wien','_blank')">
+          <div>
+            <div class="em">🖼️</div>
+            <div class="cname">Albertina</div>
+            <div class="ctrans">🚇 U1/U2/U4 Karlsplatz oder Tram D</div>
+          </div>
+          <div class="cprice">
+            <div class="val">39,80 €</div>
+            <div class="lbl">2 Personen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:2rem;">
+      <a class="mapbtn" href="https://www.google.com/maps/dir/Sch%C3%B6nbrunner+Schlo%C3%9Fstra%C3%9Fe+47,+1130+Wien/Untere+Wei%C3%9Fgerberstra%C3%9Fe+13,+1030+Wien/Stephansplatz+3,+1010+Wien/Michaelerkuppel,+1010+Wien/Prinz-Eugen-Stra%C3%9Fe+27,+1030+Wien/Albertinaplatz+1,+1010+Wien" target="_blank" rel="noopener noreferrer">
+        📍 Alle Orte auf Google Maps
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    Wien Reiseplan · Finn &amp; Papa · 23.–26. Mai 2026 · Rioca Vienna Posto 2
+  </footer>
+
+  <script>
+    (function () {
+      const t = document.querySelector('[data-theme-toggle]');
+      const r = document.documentElement;
+      let d = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      r.setAttribute('data-theme', d);
+
+      function setDarkMode(newMode) {
+        d = newMode;
+        r.setAttribute('data-theme', d);
+        if (d === 'dark') {
+          t.innerHTML =
+            '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+        } else {
+          t.innerHTML =
+            '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+        }
+      }
+
+      t && t.addEventListener('click', () => {
+        setDarkMode(d === 'dark' ? 'light' : 'dark');
+      });
+
+      // Optional: Listen to system theme change
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (!r.hasAttribute('data-theme')) {
+          setDarkMode(e.matches ? 'dark' : 'light');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
