@@ -20,7 +20,7 @@
       --color-blue: #1e5fa0;          /* München */
       --color-blue-hover: #164a82;
       --color-blue-light: #deeaf7;
-      --color-red: #a83232;           /* München→Wien */
+      --color-red: #a83232;           /* Fahrt */
       --color-red-hover: #8a2020;
       --color-red-light: #f5e8e8;
       --color-primary: #01696f;       /* Wien */
@@ -70,7 +70,7 @@
     button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
     a      { color: inherit; text-decoration: none; }
 
-    /* ── HEADER ── */
+    /* HEADER */
     header {
       background: var(--color-surface); border-bottom: 1px solid var(--color-border);
       padding: var(--space-4) var(--space-6);
@@ -88,7 +88,7 @@
     }
     .toggle:hover { background: var(--color-surface-offset); color: var(--color-text); }
 
-    /* ── TAB BAR ── */
+    /* TAB BAR */
     .tab-bar {
       position: sticky; top: 65px; z-index: 200;
       background: var(--color-surface); border-bottom: 1px solid var(--color-border);
@@ -113,7 +113,7 @@
     .tab-btn.active { color: var(--color-text); }
     .tab-btn.active::after { transform: scaleX(1); }
 
-    /* ── TAB SECTIONS ── */
+    /* TAB SECTIONS */
     .tab-section {
       display: none;
       opacity: 0; transform: translateY(8px);
@@ -125,17 +125,13 @@
       opacity: 1; transform: translateY(0);
     }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero {
       padding: var(--space-12) var(--space-6) var(--space-8);
       text-align: center;
-      transition: background var(--transition);
     }
     .hero.munich {
       background: linear-gradient(135deg, var(--color-blue-light), var(--color-bg) 60%);
-    }
-    .hero.fahrt {
-      background: linear-gradient(135deg, var(--color-red-light),  var(--color-bg) 60%);
     }
     .hero.wien {
       background: linear-gradient(135deg, var(--color-primary-highlight), var(--color-bg) 60%);
@@ -160,7 +156,7 @@
     }
     .hotel strong { color: var(--color-text); }
 
-    /* ── STATS BAR ── */
+    /* STATS */
     .stats {
       background: var(--color-surface); border-bottom: 1px solid var(--color-border);
       padding: var(--space-4) var(--space-6);
@@ -171,17 +167,16 @@
       font-size: var(--text-xl); font-family: var(--font-display); font-weight: 700;
     }
     .sv.munich { color: var(--color-blue); }
-    .sv.fahrt  { color: var(--color-red); }
     .sv.wien   { color: var(--color-primary); }
     .stat-lbl {
       font-size: var(--text-xs); color: var(--color-text-muted);
       text-transform: uppercase; letter-spacing: .05em;
     }
 
-    /* ── CONTENT WRAPPER ── */
+    /* CONTENT WRAPPER */
     .content-wrap { max-width: 960px; margin: 0 auto; padding: var(--space-8) var(--space-4); }
 
-    /* ── DAY HEADER ── */
+    /* DAY HEADER */
     .day { margin-bottom: var(--space-10); }
     .day-hd { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-5); }
     .day-num {
@@ -190,14 +185,13 @@
       flex-direction: column; flex-shrink: 0;
     }
     .dn.munich { background: var(--color-blue); }
-    .dn.fahrt  { background: var(--color-red); }
     .dn.wien   { background: var(--color-primary); }
     .day-num .n { font-size: var(--text-lg); font-weight: 700; line-height: 1; }
     .day-num .l { font-size: .6rem; text-transform: uppercase; letter-spacing: .05em; opacity: .85; }
     .day-title  { font-family: var(--font-display); font-size: var(--text-xl); }
     .day-sub    { font-size: var(--text-sm); color: var(--color-text-muted); }
 
-    /* ── CARDS ── */
+    /* CARDS */
     .cards { display: grid; gap: var(--space-4); }
     .card {
       background: var(--color-surface);
@@ -218,13 +212,12 @@
     .cprice { text-align: right; }
     .cprice .val { font-size: var(--text-lg); font-weight: 700; font-family: var(--font-display); }
     .cv.munich { color: var(--color-blue); }
-    .cv.fahrt  { color: var(--color-red); }
     .cv.wien   { color: var(--color-primary); }
     .cprice .lbl { font-size: var(--text-xs); color: var(--color-text-muted); }
 
     hr { border: none; border-top: 1px solid var(--color-divider); margin: var(--space-8) 0; }
 
-    /* ── MAP BUTTON ── */
+    /* MAP BUTTON */
     .mapbtn {
       display: inline-flex; align-items: center; gap: var(--space-2);
       color: #fff; padding: var(--space-3) var(--space-6);
@@ -235,8 +228,6 @@
     .mapbtn:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
     .mb.munich { background: var(--color-blue); }
     .mb.munich:hover { background: var(--color-blue-hover); }
-    .mb.fahrt  { background: var(--color-red); }
-    .mb.fahrt:hover  { background: var(--color-red-hover); }
     .mb.wien   { background: var(--color-primary); }
     .mb.wien:hover   { background: var(--color-primary-hover); }
 
@@ -264,7 +255,7 @@
     </svg>
     <div>
       <div class="logo-text">Urlaub 2026</div>
-      <div class="logo-sub">Kaarst – München – Wien · Finn &amp; Papa</div>
+      <div class="logo-sub">Kaarst – München → Wien · Finn &amp; Papa</div>
     </div>
   </div>
   <button class="toggle" data-theme-toggle aria-label="Dark Mode umschalten">
@@ -278,9 +269,6 @@
   <button class="tab-btn active" style="--tab-accent:var(--color-blue)" onclick="showTab('munich',this)">
     🍺 München
   </button>
-  <button class="tab-btn" style="--tab-accent:var(--color-red)" onclick="showTab('fahrt',this)">
-    🚗 Fahrt nach Wien
-  </button>
   <button class="tab-btn" style="--tab-accent:var(--color-primary)" onclick="showTab('wien',this)">
     🎼 Wien
   </button>
@@ -293,7 +281,7 @@
 <div id="tab-munich" class="tab-section active">
 
   <section class="hero munich">
-    <div class="hero-pill pill munich">📅 Samstag, 23. Mai</div>
+    <div class="hero-pill pill munich">📅 Samstag, 23. Mai – Anreise nach München</div>
     <h1>München entdecken</h1>
     <p>BMW Museum &amp; Übernachtung · 2 Personen</p>
     <div class="hotel">🏨 <strong>Leonardo Royal Hotel München</strong> · Ungererstraße 139</div>
@@ -360,99 +348,14 @@
 
 
 <!-- ═════════════════════════════════════════════════════════════════════════════════════
-     FAHRT MÜNCHEN → WIEN
-════════════════════════════════════════════════════════════════════════════════════════ -->
-<div id="tab-fahrt" class="tab-section">
-
-  <section class="hero fahrt">
-    <div class="hero-pill pill fahrt">🚗 Weiterreise · Sonntag, 24. Mai (vormittags)</div>
-    <h1>München → Wien</h1>
-    <p>ca. 360 km · ~4 Stunden · Autobahn A8 → A1</p>
-    <div class="hotel">🪪 <strong>Österreich Vignette</strong> · 10‑Tage‑Variante (~11,50 €)</div>
-  </section>
-
-  <div class="stats">
-    <div class="stat"><div class="stat-val sv fahrt">~360 km</div><div class="stat-lbl">Strecke</div></div>
-    <div class="stat"><div class="stat-val sv fahrt">~4 h</div><div class="stat-lbl">Fahrzeit</div></div>
-    <div class="stat"><div class="stat-val sv fahrt">A8 / A1</div><div class="stat-lbl">Autobahn</div></div>
-    <div class="stat"><div class="stat-val sv fahrt">11,50 €</div><div class="stat-lbl">Vignette (10 Tage)</div></div>
-  </div>
-
-  <div class="content-wrap">
-
-    <div class="day">
-      <div class="day-hd">
-        <div class="day-num dn fahrt"><span class="n">→</span><span class="l">Fahrt</span></div>
-        <div>
-          <div class="day-title">München → Wien</div>
-          <div class="day-sub">Kurz vor Grenze tanken · Vignette anbringen</div>
-        </div>
-      </div>
-
-      <div class="cards">
-
-        <div class="card" onclick="window.open('https://www.google.com/maps/dir/Leonardo+Royal+Hotel+M%C3%BCnchen/Am+Sch%C3%B6nbrunner+Schloss/Untere+Wei%C3%9Fgerberstra%C3%9Fe+13,+Wien','_blank')">
-          <div>
-            <div class="em">🚗</div>
-            <div class="cname">Weiterfahrt nach Wien</div>
-            <div class="ctrans">🛣️ A8 Richtung Salzburg → A1 Westautobahn Richtung Wien</div>
-            <div class="ctrans" style="margin-top:4px">🪪 Austria‑Vignette bereits am Auto anbringen</div>
-          </div>
-          <div class="cprice">
-            <div class="val cv fahrt">~360 km</div>
-            <div class="lbl">~4 Stunden</div>
-          </div>
-        </div>
-
-        <div class="card" onclick="window.open('https://www.google.com/maps?q=Motorway+Rastst%C3%A4tte%E2%80%93Holledau','_blank')">
-          <div>
-            <div class="em">⛽</div>
-            <div class="cname">Tanktipp vor der Grenze</div>
-            <div class="ctrans">⛽ Benzin in Deutschland meist günstiger</div>
-            <div class="ctrans" style="margin-top:4px">☕ Kaffee / Snack auf der Raststätte</div>
-          </div>
-          <div class="cprice">
-            <div class="val cv fahrt">Sparen</div>
-            <div class="lbl">Tipp</div>
-          </div>
-        </div>
-
-        <div class="card" onclick="window.open('https://www.google.com/maps?q=Garage+Landstra%C3%9Fe++Wien','_blank')">
-          <div>
-            <div class="em">🅿️</div>
-            <div class="cname">Parken in Wien</div>
-            <div class="ctrans">📍 3. Bezirk · Kurzparkzone</div>
-            <div class="ctrans" style="margin-top:4px">🚗 Parkgarage empfohlen (~3–5 € pro Stunde)</div>
-          </div>
-          <div class="cprice">
-            <div class="val cv fahrt">Info</div>
-            <div class="lbl">Wien</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div style="text-align:center;margin-top:2rem;">
-      <a class="mapbtn mb fahrt"
-         href="https://www.google.com/maps/dir/Leonardo+Royal+Hotel+M%C3%BCnchen/Viehmarktgasse+4,+1030+Wien"
-         target="_blank" rel="noopener noreferrer">
-        📍 Route auf Google Maps
-      </a>
-    </div>
-  </div>
-</div>
-
-
-<!-- ═════════════════════════════════════════════════════════════════════════════════════
-     WIEN
+     WIEN (inkl. SAMSTAG als Anreisetag WIEN + Programm)
 ════════════════════════════════════════════════════════════════════════════════════════ -->
 <div id="tab-wien" class="tab-section">
 
   <section class="hero wien">
-    <div class="hero-pill pill wien">📅 Sonntag, 24. Mai – Dienstag, 26. Mai 2026</div>
+    <div class="hero-pill pill wien">📅 Samstag, 24. Mai – Dienstag, 26. Mai 2026</div>
     <h1>Wien entdecken</h1>
-    <p>3 Tage · 2 Personen · 6 Sehenswürdigkeiten · 266,60 €</p>
+    <p>4 Tage · 2 Personen · 6 Sehenswürdigkeiten · 266,60 €</p>
     <div class="hotel">🏨 <strong>Rioca Vienna Posto 2</strong> · Viehmarktgasse 4, 1030 Wien</div>
   </section>
 
@@ -460,17 +363,71 @@
     <div class="stat"><div class="stat-val sv wien">266,60 €</div><div class="stat-lbl">Gesamt (2 Pers.)</div></div>
     <div class="stat"><div class="stat-val sv wien">133,30 €</div><div class="stat-lbl">Pro Person</div></div>
     <div class="stat"><div class="stat-val sv wien">6</div><div class="stat-lbl">Sehenswürdigkeiten</div></div>
-    <div class="stat"><div class="stat-val sv wien">3</div><div class="stat-lbl">Tage</div></div>
+    <div class="stat"><div class="stat-val sv wien">4</div><div class="stat-lbl">Tage</div></div>
   </div>
 
   <div class="content-wrap">
 
-    <!-- Tag 2 – Sonntag, 24. Mai -->
+    <!-- Tag 1 – Samstag: Anreise + Wien-Abend -->
+    <div class="day">
+      <div class="day-hd">
+        <div class="day-num dn wien"><span class="n">1</span><span class="l">Sa</span></div>
+        <div>
+          <div class="day-title">Samstag, 24. Mai</div>
+          <div class="day-sub">Anreisetag &amp; kurzer Abend in Wien</div>
+        </div>
+      </div>
+      <div class="cards">
+
+        <div class="card" onclick="window.open('https://www.google.com/maps/dir/Leonardo+Royal+Hotel+M%C3%BCnchen/Viehmarktgasse+4,+1030+Wien','_blank')">
+          <div>
+            <div class="em">🚗</div>
+            <div class="cname">Anreise München → Wien</div>
+            <div class="ctrans">🛣️ A8 → A1 · ca. 360 km · ~4 Stunden</div>
+            <div class="ctrans" style="margin-top:4px">🪪 Österreich Vignette (~11,50 €)</div>
+          </div>
+          <div class="cprice">
+            <div class="val cv wien">Fahrt</div>
+            <div class="lbl">Strecke</div>
+          </div>
+        </div>
+
+        <div class="card" onclick="window.open('https://www.google.com/maps?q=Viehmarktgasse+4,+1030+Wien','_blank')">
+          <div>
+            <div class="em">🏨</div>
+            <div class="cname">Hotel‑Check‑in</div>
+            <div class="ctrans">📍 Rioca Vienna Posto 2 · Viehmarktgasse 4</div>
+            <div class="ctrans" style="margin-top:4px">🕒 Check-in ab 15:00 Uhr</div>
+          </div>
+          <div class="cprice">
+            <div class="val cv wien">Hotel</div>
+            <div class="lbl">Übernachtung</div>
+          </div>
+        </div>
+
+        <div class="card" onclick="window.open('https://www.google.com/maps?q=Stephansplatz+3,+1010+Wien','_blank')">
+          <div>
+            <div class="em">⛪</div>
+            <div class="cname">Stephansplatz &amp; Kaffee</div>
+            <div class="ctrans">📍 Stephansplatz · Fußläufig vom Hotel</div>
+            <div class="ctrans" style="margin-top:4px">☕ Kaffee oder Eis zur Einstimmung</div>
+          </div>
+          <div class="cprice">
+            <div class="val cv wien">ca. 10–15 €</div>
+            <div class="lbl">für 2 Personen</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <hr>
+
+    <!-- Tag 2 – Sonntag -->
     <div class="day">
       <div class="day-hd">
         <div class="day-num dn wien"><span class="n">2</span><span class="l">So</span></div>
         <div>
-          <div class="day-title">Sonntag, 24. Mai</div>
+          <div class="day-title">Sonntag, 25. Mai</div>
           <div class="day-sub">Stephansdom &amp; Hofburg</div>
         </div>
       </div>
@@ -501,12 +458,12 @@
     </div>
     <hr>
 
-    <!-- Tag 3 – Montag, 25. Mai -->
+    <!-- Tag 3 – Montag -->
     <div class="day">
       <div class="day-hd">
         <div class="day-num dn wien"><span class="n">3</span><span class="l">Mo</span></div>
         <div>
-          <div class="day-title">Montag, 25. Mai</div>
+          <div class="day-title">Montag, 26. Mai</div>
           <div class="day-sub">Schloss Belvedere</div>
         </div>
       </div>
@@ -526,13 +483,13 @@
     </div>
     <hr>
 
-    <!-- Tag 4 – Dienstag, 26. Mai -->
+    <!-- Tag 4 – Dienstag -->
     <div class="day">
       <div class="day-hd">
         <div class="day-num dn wien"><span class="n">4</span><span class="l">Di</span></div>
         <div>
-          <div class="day-title">Dienstag, 26. Mai</div>
-          <div class="day-sub">Albertina · Abreisetag</div>
+          <div class="day-title">Dienstag, 27. Mai</div>
+          <div class="day-sub">Albertina · Abschluss</div>
         </div>
       </div>
       <div class="cards">
@@ -552,7 +509,7 @@
 
     <div style="text-align:center;margin-top:2rem;">
       <a class="mapbtn mb wien"
-         href="https://www.google.com/maps/dir/Sch%C3%B6nbrunner+Schlo%C3%9Fstra%C3%9Fe+47,+1130+Wien/Untere+Wei%C3%9Fgerberstra%C3%9Fe+13,+1030+Wien/Stephansplatz+3,+1010+Wien/Michaelerkuppel,+1010+Wien/Prinz-Eugen-Stra%C3%9Fe+27,+1030+Wien/Albertinaplatz+1,+1010+Wien"
+         href="https://www.google.com/maps/dir/Leonardo+Royal+Hotel+M%C3%BCnchen/Viehmarktgasse+4,+1030+Wien/Sch%C3%B6nbrunner+Schlo%C3%9Fstra%C3%9Fe+47,+1130+Wien/Untere+Wei%C3%9Fgerberstra%C3%9Fe+13,+1030+Wien/Stephansplatz+3,+1010+Wien/Michaelerkuppel,+1010+Wien/Prinz-Eugen-Stra%C3%9Fe+27,+1030+Wien/Albertinaplatz+1,+1010+Wien"
          target="_blank" rel="noopener noreferrer">
         📍 Alle Orte auf Google Maps
       </a>
@@ -562,7 +519,7 @@
 </div>
 
 
-<footer>Urlaub 2026 · Finn &amp; Papa · München → Wien · 22.–26. Mai 2026</footer>
+<footer>Urlaub 2026 · Finn &amp; Papa · München → Wien · 22.–27. Mai 2026</footer>
 
 <script>
   function showTab(id, btn) {
